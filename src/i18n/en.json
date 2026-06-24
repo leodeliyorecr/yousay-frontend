@@ -1,0 +1,53 @@
+{
+  "slogan": "Say what you want",
+  "categoriesTitle": "Categories",
+  "categories": {
+    "divertidos": "Funny",
+    "fanaticos_futbol": "Soccer Fans",
+    "cumpleanos": "Birthday",
+    "amor": "Love",
+    "autoestima": "Self Esteem",
+    "espiritual": "Spiritual"
+  },
+  "footer": {
+    "contact": "Contact"
+  },
+  "errors": {
+  "loadCategories": "Error loading categories",
+  "loadTemplates": "Error loading templates",
+  "loadCard": "Error loading card",
+  "cardExpired": "This card has expired",
+  "cardNotFound": "Card not found",
+  "invalidPin": "Incorrect PIN",
+  "generic": "Something went wrong, please try again"
+  },
+"actions": {
+  "back": "Back",
+  "view": "View",
+  "edit": "Edit",
+  "share": "Share"
+},
+"editModal": {
+  "title": "Customize your message",
+  "textLabel": "Text {{number}}",
+  "usePin": "Protect with 4-digit PIN",
+  "cancel": "Cancel",
+  "create": "Create",
+  "creating": "Creating..."
+},
+"successModal": {
+  "title": "Your message is ready!",
+  "subtitle": "Share it or open it to see it",
+  "open": "Open",
+  "share": "Share",
+  "close": "Close",
+  "linkCopied": "Link copied to clipboard"
+},
+"pinGate": {
+  "title": "This message is protected",
+  "subtitle": "Enter the 4-digit PIN to view it",
+  "invalidPin": "Incorrect PIN, try again",
+  "unlock": "Unlock",
+  "validating": "Validating..."
+}
+}

@@ -1,0 +1,20 @@
+:root {
+  --bg-dark:         #0e0c10;
+  --bg-panel:        #141118;
+  --bg-sidebar:      rgba(14, 10, 20, 0.55);
+  --bg-header:       #0a0810;
+  --bg-langbar:      #0c0a10;
+  --accent-pink:     #fc6fbf;
+  --accent-glow:     #f25eb2;
+  --text-primary:    #f0e8f7;
+  --text-muted:      #cdc6d6;
+  --border-neon:     rgba(252, 111, 191, 0.25);
+  --border-subtle:   rgba(252, 111, 191, 0.12);
+  --header-h:        80px;
+  --langbar-h:       36px;
+  --footer-h:        36px;
+  --sidebar-w:       220px;
+  --top-offset:      116px; /* header + langbar */
+  --font-main:       'Inter', sans-serif;
+  --font-display:    'Space Grotesk', sans-serif;
+}

@@ -1,0 +1,28 @@
+.footer {
+  min-height: var(--footer-h);
+  background: var(--bg-langbar);
+  border-top: 1px solid var(--border-subtle);
+  padding: 8px 24px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+}
+
+.sep {
+  color: var(--border-neon);
+}
+
+.link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.link:hover {
+  color: var(--accent-pink);
+}

@@ -1,0 +1,128 @@
+.header {
+  height: var(--header-h);
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-neon);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 100px;
+  object-fit: contain;
+  padding-top: 10px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--accent-pink);
+}
+
+.langBar {
+  height: var(--langbar-h);
+  background: var(--bg-langbar);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  gap: 4px;
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.langBtn {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-main);
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .2s;
+}
+
+.langBtn:hover {
+  color: var(--accent-pink);
+  border-color: var(--border-neon);
+  background: rgba(252, 111, 191, 0.06);
+}
+
+.langBtnActive {
+  color: var(--accent-pink);
+  border-color: var(--border-neon);
+  background: rgba(252, 111, 191, 0.06);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.slogan {
+  font-size: 13px;
+  color: var(--accent-pink);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .logoArea {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .logo {
+    height: 60px;
+    padding-top: 0;
+  }
+
+  .slogan {
+    font-size: 10px;
+    display: block;
+  }
+
+  .hamburger {
+    position: absolute;
+    left: 12px;
+  }
+}

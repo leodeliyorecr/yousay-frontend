@@ -1,0 +1,54 @@
+{
+  "slogan": "Exprime-toi librement",
+  "categoriesTitle": "Categorías",
+  "categories": {
+    "divertidos": "Amusants",
+    "romanticos": "Romantiques",
+    "fanaticos_futbol": "Fans de Football",
+    "cumpleanos": "Anniversaire",
+    "amor": "Amour",
+    "autoestima": "Estime de soi",
+    "espiritual": "Spirituel"
+  },
+  "footer": {
+    "contact": "Contact"
+  },
+  "errors": {
+  "loadCategories": "Erreur lors du chargement des catégories",
+  "loadTemplates": "Erreur lors du chargement des modèles",
+  "loadCard": "Erreur lors du chargement de la carte",
+  "cardExpired": "Cette carte a expiré",
+  "cardNotFound": "Carte introuvable",
+  "invalidPin": "PIN incorrect",
+  "generic": "Quelque chose s'est mal passé, réessayez"
+  },
+  "actions": {
+  "back": "Retour",
+  "view": "Voir",
+  "edit": "Modifier",
+  "share": "Partager"
+},
+"editModal": {
+  "title": "Personnalisez votre message",
+  "textLabel": "Texte {{number}}",
+  "usePin": "Protéger avec un code PIN à 4 chiffres",
+  "cancel": "Annuler",
+  "create": "Créer",
+  "creating": "Création..."
+},
+"successModal": {
+  "title": "Votre message est prêt !",
+  "subtitle": "Partagez-le ou ouvrez-le pour le voir",
+  "open": "Ouvrir",
+  "share": "Partager",
+  "close": "Fermer",
+  "linkCopied": "Lien copié dans le presse-papiers"
+},
+"pinGate": {
+  "title": "Ce message est protégé",
+  "subtitle": "Entrez le code PIN à 4 chiffres pour le voir",
+  "invalidPin": "PIN incorrect, réessayez",
+  "unlock": "Déverrouiller",
+  "validating": "Validation..."
+}
+}

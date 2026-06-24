@@ -1,0 +1,74 @@
+.stage {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.actionBar {
+  height: var(--header-h);
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-neon);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all .2s;
+  font-family: var(--font-main);
+}
+
+.actionBtn:hover {
+  color: var(--accent-pink);
+  background: rgba(252, 111, 191, 0.08);
+}
+
+.actionBtnHidden {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.iframeWrap {
+  flex: 1;
+  position: relative;
+  background: #141114;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.actionBarHidden {
+  transform: translateY(-100%);
+  position: absolute;
+  width: 100%;
+}

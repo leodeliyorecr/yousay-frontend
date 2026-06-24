@@ -1,0 +1,53 @@
+{
+  "slogan": "Di lo que piensas",
+  "categoriesTitle": "Categorías",
+  "categories": {
+    "divertidos": "Divertidos",
+    "fanaticos_futbol": "Fanáticos Fútbol",
+    "cumpleanos": "Cumpleaños",
+    "amor": "Amor",
+    "autoestima": "Autoestima",
+    "espiritual": "Espiritual"
+  },
+  "footer": {
+    "contact": "Contacto"
+  },
+  "errors": {
+  "loadCategories": "Error al cargar las categorías",
+  "loadTemplates": "Error al cargar las plantillas",
+  "loadCard": "Error al cargar la tarjeta",
+  "cardExpired": "Esta tarjeta ha expirado",
+  "cardNotFound": "Tarjeta no encontrada",
+  "invalidPin": "PIN incorrecto",
+  "generic": "Algo salió mal, intenta de nuevo"
+  },
+  "actions": {
+  "back": "Regresar",
+  "view": "Ver",
+  "edit": "Modificar",
+  "share": "Compartir"
+},
+"editModal": {
+  "title": "Personaliza tu mensaje",
+  "textLabel": "Texto {{number}}",
+  "usePin": "Proteger con PIN de 4 dígitos",
+  "cancel": "Cancelar",
+  "create": "Crear",
+  "creating": "Creando..."
+},
+"successModal": {
+  "title": "¡Tu mensaje está listo!",
+  "subtitle": "Compártelo o ábrelo para verlo",
+  "open": "Abrir",
+  "share": "Compartir",
+  "close": "Cerrar",
+  "linkCopied": "Link copiado al portapapeles"
+},
+"pinGate": {
+  "title": "Este mensaje está protegido",
+  "subtitle": "Ingresa el PIN de 4 dígitos para verlo",
+  "invalidPin": "PIN incorrecto, intenta de nuevo",
+  "unlock": "Desbloquear",
+  "validating": "Validando..."
+}
+}
