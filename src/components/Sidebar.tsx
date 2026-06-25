@@ -33,7 +33,7 @@ export default function Sidebar({ isOpen, onClose, activeCategory, onSelectCateg
         <div className={styles.sidebarTitle}>
           {t('categoriesTitle')}
         </div>
-        {loading && <div className={styles.catItem}>...</div>}
+        {loading && <div className={styles.catItem}>{t('common.loading')}</div>}
         {errorKey && <div className={styles.catItem}>{t(errorKey)}</div>}
         {categories.map((category) => {
           const { id, slug } = category

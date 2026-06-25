@@ -15,6 +15,7 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
   const { t } = useTranslation()
   const [texts, setTexts] = useState<string[]>(initialTexts)
   const [usePin, setUsePin] = useState(false)
+  const [showPinPanel, setShowPinPanel] = useState(false)
   const [pinDigits, setPinDigits] = useState(['', '', '', ''])
 
   useEffect(() => {
@@ -34,10 +35,23 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
     updated[index] = value
     setPinDigits(updated)
 
-    // Auto-focus al siguiente input
+    // Auto-focus to next input
     if (value && index < 3) {
       const next = document.getElementById(`pin-${index + 1}`)
       next?.focus()
+    }
+  }
+
+  function handleTogglePin() {
+    const newValue = !usePin
+    setUsePin(newValue)
+
+    if (newValue) {
+      // Wait for the switch animation to finish before showing the PIN panel
+      setTimeout(() => setShowPinPanel(true), 250)
+    } else {
+      setShowPinPanel(false)
+      setPinDigits(['', '', '', ''])
     }
   }
 
@@ -52,7 +66,7 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
 
   return (
     <div className={styles.overlay}>
-        <div className={styles.modal}>
+      <div className={styles.modal}>
         <h3 className={styles.title}>{t('editModal.title')}</h3>
 
         {texts.map((text, index) => (
@@ -74,16 +88,24 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
         ))}
 
         <div className={styles.pinSection}>
-          <label className={styles.pinToggle}>
+          <div className={styles.toggleRow}>
+          <span className={styles.toggleLabelText}>{t('editModal.usePin')}</span>
+          <div className={styles.toggleWrap}>
             <input
               type="checkbox"
+              id="pin-toggle"
+              className={styles.toggleInput}
               checked={usePin}
-              onChange={e => setUsePin(e.target.checked)}
+              onChange={handleTogglePin}
             />
-            {t('editModal.usePin')}
-          </label>
+            <label htmlFor="pin-toggle" className={styles.toggleLabel}>
+              <span className={styles.track}></span>
+              <span className={styles.thumb}></span>
+            </label>
+          </div>
+        </div>
 
-          {usePin && (
+          {showPinPanel && (
             <div className={styles.pinInputs}>
               {pinDigits.map((digit, index) => (
                 <input

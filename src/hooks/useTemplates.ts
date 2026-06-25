@@ -15,17 +15,20 @@ export function useTemplates(categoryId: number | null, languageCode: string) {
   const [loading, setLoading] = useState(true)
   const [errorKey, setErrorKey] = useState<string | null>(null)
 
-  useEffect(() => {
-    if (categoryId === null) return
+useEffect(() => {
+  if (categoryId === null) {
+    setLoading(false)
+    return
+  }
 
-    setLoading(true)
-    api.get(`/templates/category/${categoryId}`, {
-      params: { lang: languageCode }
-    })
-      .then(res => setTemplates(res.data))
-      .catch(() => setErrorKey('errors.loadTemplates'))
-      .finally(() => setLoading(false))
-  }, [categoryId, languageCode])
+  setLoading(true)
+  api.get(`/templates/category/${categoryId}`, {
+    params: { lang: languageCode }
+  })
+    .then(res => setTemplates(res.data))
+    .catch(() => setErrorKey('errors.loadTemplates'))
+    .finally(() => setLoading(false))
+}, [categoryId, languageCode])
 
   return { templates, loading, errorKey }
 }

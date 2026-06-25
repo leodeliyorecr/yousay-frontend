@@ -19,7 +19,10 @@
   "cardExpired": "This card has expired",
   "cardNotFound": "Card not found",
   "invalidPin": "Incorrect PIN",
-  "generic": "Something went wrong, please try again"
+  "generic": "Something went wrong, please try again",
+  "cardExpiredTitle": "This card has expired",
+  "cardExpiredSubtitle": "Yousay messages last 3 days. Create a new one to keep sharing.",
+  "goHome": "Go home"
   },
 "actions": {
   "back": "Back",
@@ -49,5 +52,8 @@
   "invalidPin": "Incorrect PIN, try again",
   "unlock": "Unlock",
   "validating": "Validating..."
+},
+ "common": { 
+  "loading": "Loading..." 
 }
 }

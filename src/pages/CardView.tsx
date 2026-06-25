@@ -7,6 +7,8 @@ import SuccessModal from '../components/SuccessModal'
 import PinGate from '../components/PinGate'
 import api from '../services/api'
 import { shareYousayLink } from '../utils/share'
+import ExpiredCard from '../components/ExpiredCard'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 interface CardData {
   hashCode: string
@@ -37,7 +39,13 @@ export default function CardView() {
         setCard(res.data)
         if (!res.data.hasPin) setPinValidated(true)
       })
-      .catch(() => setErrorKey('errors.cardNotFound'))
+      .catch((err) => {
+        if (err.response?.status === 400) {
+          setErrorKey('errors.cardExpired')
+        } else {
+          setErrorKey('errors.cardNotFound')
+        }
+      })
       .finally(() => setLoading(false))
   }, [hash])
 
@@ -63,7 +71,8 @@ export default function CardView() {
     }
   }
 
-  if (loading) return <p>...</p>
+  if (loading) return <LoadingSpinner fullScreen />
+  if (errorKey === 'errors.cardExpired') return <ExpiredCard />
   if (errorKey) return <p>{errorKey}</p>
   if (!card) return null
 
@@ -85,7 +94,7 @@ export default function CardView() {
         htmlUrl={`https://localhost:7179/api/cards/${hash}/html`}
         onBack={() => navigate('/')}
         onEdit={() => setShowEditModal(true)}
-        onShare={() => shareYousayLink(`https://yousay.fun/card/${hash}`, () => {
+        onShare={() => shareYousayLink(`https://localhost:7179/share/card/${hash}`, () => {
           alert(t('successModal.linkCopied'))
         })}
       />

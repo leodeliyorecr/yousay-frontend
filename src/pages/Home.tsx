@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import { useTemplates } from '../hooks/useTemplates'
 import { useTranslation } from 'react-i18next'
 import styles from './Home.module.css'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -39,7 +40,7 @@ export default function Home() {
           {activeCategory?.slug}
         </div>
 
-        {loading && <p>...</p>}
+        {loading && <LoadingSpinner />}
         {errorKey && <p>{errorKey}</p>}
 
         <div className={styles.grid}>

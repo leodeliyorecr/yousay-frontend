@@ -13,41 +13,47 @@
     "contact": "Contacto"
   },
   "errors": {
-  "loadCategories": "Erro ao carregar categorias",
-  "loadTemplates": "Erro ao carregar modelos",
-  "loadCard": "Erro ao carregar cartão",
-  "cardExpired": "Este cartão expirou",
-  "cardNotFound": "Cartão não encontrado",
-  "invalidPin": "PIN incorreto",
-  "generic": "Algo correu mal, tente novamente"
+    "loadCategories": "Erro ao carregar categorias",
+    "loadTemplates": "Erro ao carregar modelos",
+    "loadCard": "Erro ao carregar cartão",
+    "cardExpired": "Este cartão expirou",
+    "cardNotFound": "Cartão não encontrado",
+    "invalidPin": "PIN incorreto",
+    "generic": "Algo correu mal, tente novamente",
+    "cardExpiredTitle": "Este cartão expirou",
+    "cardExpiredSubtitle": "As mensagens do Yousay duram 3 dias. Cria uma nova para continuar a partilhar.",
+    "goHome": "Ir para o início"
   },
   "actions": {
-  "back": "Voltar",
-  "view": "Ver",
-  "edit": "Editar",
-  "share": "Compartilhar"
-},
-"editModal": {
-  "title": "Personalize sua mensagem",
-  "textLabel": "Texto {{number}}",
-  "usePin": "Proteger com PIN de 4 dígitos",
-  "cancel": "Cancelar",
-  "create": "Criar",
-  "creating": "Criando..."
-},
-"successModal": {
-  "title": "Sua mensagem está pronta!",
-  "subtitle": "Compartilhe ou abra para ver",
-  "open": "Abrir",
-  "share": "Compartilhar",
-  "close": "Fechar",
-  "linkCopied": "Link copiado para a área de transferência"
-},
-"pinGate": {
-  "title": "Esta mensagem está protegida",
-  "subtitle": "Digite o PIN de 4 dígitos para ver",
-  "invalidPin": "PIN incorreto, tente novamente",
-  "unlock": "Desbloquear",
-  "validating": "Validando..."
-}
+    "back": "Voltar",
+    "view": "Ver",
+    "edit": "Editar",
+    "share": "Compartilhar"
+  },
+  "editModal": {
+    "title": "Personalize sua mensagem",
+    "textLabel": "Texto {{number}}",
+    "usePin": "Proteger com PIN de 4 dígitos",
+    "cancel": "Cancelar",
+    "create": "Criar",
+    "creating": "Criando..."
+  },
+  "successModal": {
+    "title": "Sua mensagem está pronta!",
+    "subtitle": "Compartilhe ou abra para ver",
+    "open": "Abrir",
+    "share": "Compartilhar",
+    "close": "Fechar",
+    "linkCopied": "Link copiado para a área de transferência"
+  },
+  "pinGate": {
+    "title": "Esta mensagem está protegida",
+    "subtitle": "Digite o PIN de 4 dígitos para ver",
+    "invalidPin": "PIN incorreto, tente novamente",
+    "unlock": "Desbloquear",
+    "validating": "Validando..."
+  },
+  "common": { 
+    "loading": "Carregando..." 
+  }
 }

@@ -19,7 +19,10 @@
   "cardExpired": "Esta tarjeta ha expirado",
   "cardNotFound": "Tarjeta no encontrada",
   "invalidPin": "PIN incorrecto",
-  "generic": "Algo salió mal, intenta de nuevo"
+  "generic": "Algo salió mal, intenta de nuevo",
+  "cardExpiredTitle": "Esta tarjeta expiró",
+  "cardExpiredSubtitle": "Los mensajes de Yousay duran 3 días. Crea uno nuevo para seguir compartiendo.",
+  "goHome": "Ir al inicio"
   },
   "actions": {
   "back": "Regresar",
@@ -49,5 +52,8 @@
   "invalidPin": "PIN incorrecto, intenta de nuevo",
   "unlock": "Desbloquear",
   "validating": "Validando..."
+},
+ "common": { 
+  "loading": "Cargando..." 
 }
 }
