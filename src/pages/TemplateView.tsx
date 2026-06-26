@@ -49,7 +49,7 @@ export default function TemplateView() {
   return (
     <>
       <TemplateFrame
-        htmlUrl={`https://localhost:7179/api/templates/${id}/html`}
+        htmlUrl={`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/api/templates/${id}/html`}
         onBack={() => navigate('/')}
         onEdit={() => {
           if (templateTexts.length > 0) setShowEditModal(true)

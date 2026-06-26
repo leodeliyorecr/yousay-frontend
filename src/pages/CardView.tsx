@@ -91,10 +91,10 @@ export default function CardView() {
   return (
     <>
       <TemplateFrame
-        htmlUrl={`https://localhost:7179/api/cards/${hash}/html`}
+        htmlUrl={`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/api/cards/${hash}/html`}
         onBack={() => navigate('/')}
         onEdit={() => setShowEditModal(true)}
-        onShare={() => shareYousayLink(`https://localhost:7179/share/card/${hash}`, () => {
+        onShare={() => shareYousayLink(`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/share/card/${hash}`, () => {
           alert(t('successModal.linkCopied'))
         })}
       />
