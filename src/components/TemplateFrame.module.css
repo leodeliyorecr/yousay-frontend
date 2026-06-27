@@ -1,6 +1,8 @@
 .stage {
   position: relative;
+  width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
   background: var(--bg-dark);
   display: flex;
   flex-direction: column;
@@ -71,4 +73,18 @@
   transform: translateY(-100%);
   position: absolute;
   width: 100%;
+}
+
+@media (max-width: 480px) {
+  .actionBar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .actionGroup {
+    width: 100%;
+    justify-content: center;
+  }
 }

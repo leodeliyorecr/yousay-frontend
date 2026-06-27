@@ -10,7 +10,7 @@ interface SuccessModalProps {
 
 export default function SuccessModal({ hash, onClose, onOpen }: SuccessModalProps) {
   const { t } = useTranslation()
-  const cardUrl = `https://yousay.fun/card/${hash}`
+  const cardUrl = `https://yousay.fun/share/card/${hash}`
 
   async function handleShare() {
     if (navigator.share) {

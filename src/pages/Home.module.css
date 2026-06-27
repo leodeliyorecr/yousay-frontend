@@ -15,10 +15,14 @@
 }
 
 .sectionTitle {
+  display: inline-block;
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-primary);
+  background: rgba(10, 8, 16, 0.6);
+  padding: 6px 14px;
+  border-radius: 6px;
   margin-bottom: 20px;
 }
 
