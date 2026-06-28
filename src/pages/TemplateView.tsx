@@ -54,7 +54,7 @@ export default function TemplateView() {
         onEdit={() => {
           if (templateTexts.length > 0) setShowEditModal(true)
         }}
-        onShare={() => shareYousayLink(`https://yousay.fun/template/${id}`, () => {
+        onShare={() => shareYousayLink(`https://yousay.fun/share/template/${id}?lang=${i18n.language}`, () => {
           alert(t('successModal.linkCopied'))
         })}
       />
