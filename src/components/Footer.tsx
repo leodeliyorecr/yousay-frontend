@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 
 export default function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className={styles.footer}>
       <div className="container-fluid">
@@ -10,19 +13,9 @@ export default function Footer() {
           </div>
           <div className={`col-auto d-none d-md-block ${styles.sep}`}>·</div>
           <div className="col-12 col-md-auto">
-            <a href="mailto:info@yousay.fun" className={styles.link}>
-              info@yousay.fun
-            </a>
-          </div>
-          <div className={`col-auto d-none d-md-block ${styles.sep}`}>·</div>
-          <div className="col-12 col-md-auto">
-            <a href="tel:+50686053702" className={styles.link}>
-              +506 8605 3702
-            </a>
-          </div>
-          <div className={`col-auto d-none d-md-block ${styles.sep}`}>·</div>
-          <div className="col-12 col-md-auto">
-            <span>Leonardo Deliyore, San José - Costa Rica</span>
+            <Link to="/terminos" className={styles.link}>
+              {t('footer.terms')}
+            </Link>
           </div>
         </div>
       </div>

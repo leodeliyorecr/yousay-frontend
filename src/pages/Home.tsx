@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer'
@@ -15,15 +15,21 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<{ id: number; slug: string } | null>(null)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
-
   const { categories } = useCategories()
   const { templates, loading, errorKey } = useTemplates(activeCategory?.id ?? null, i18n.language)
+  const location = useLocation()
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  useEffect(() => {
+    if (location.state?.categoryId && location.state?.categorySlug) {
+      setActiveCategory({ id: location.state.categoryId, slug: location.state.categorySlug })
+    }
+  }, [location.state])
 
   // Select the first category automatically once categories have loaded
   useEffect(() => {

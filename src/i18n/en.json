@@ -10,7 +10,7 @@
     "espiritual": "Spiritual"
   },
   "footer": {
-    "contact": "Contact"
+    "terms": "Contact & Terms"
   },
   "errors": {
   "loadCategories": "Error loading categories",
@@ -55,5 +55,37 @@
 },
  "common": { 
   "loading": "Loading..." 
+},
+"terms": {
+  "pageTitle": "Contact & Terms and Conditions",
+  "contactTitle": "Contact",
+  "name": "Name",
+  "phone": "Phone / WhatsApp",
+  "email": "Email",
+  "website": "Website",
+  "country": "Country",
+  "termsTitle": "Terms and Conditions of Use",
+  "lastUpdated": "Last updated: August 2026",
+  "s1Title": "1. Acceptance of Terms",
+  "s1": "By accessing and using the Yousay.fun platform, you agree to comply with these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.",
+  "s2Title": "2. Description of Service",
+  "s2": "Yousay.fun is a digital platform that allows users to create, customize and share animated cards with personalized messages. The service is free to access and available in multiple languages.",
+  "s3Title": "3. Acceptable Use",
+  "s3": "The user agrees to use the platform responsibly and legally. The following is strictly prohibited: creating or sharing offensive, discriminatory, violent, obscene or illegal content; using the platform to harass or harm third parties; attempting to compromise the security of the platform; using automated tools without express authorization.",
+  "s4Title": "4. User-Generated Content",
+  "s4": "Messages and personalized texts entered by users are the sole responsibility of the person who creates them. Yousay.fun is not responsible for content that users generate, share or distribute through animated cards.",
+  "s5Title": "5. Intellectual Property",
+  "s5": "All platform content — including designs, animations, source code, logos and branding — is the property of Yousay.fun and is protected by applicable intellectual property laws. Reproduction or use without prior authorization is prohibited.",
+  "s6Title": "6. Data Collection and Privacy",
+  "s6": "Currently, Yousay.fun does not directly collect personal data from its users. However, we use Google Tag Manager (GTM) for tag management and platform usage analytics. In the near future, we may collect statistical browsing data to improve the user experience. Users will be notified when such collection is implemented.",
+  "s7Title": "7. Cookies and Tracking Technologies",
+  "s7": "The platform may use cookies and similar technologies to improve site functionality and collect statistical usage information. By using Yousay.fun, you consent to the use of these technologies.",
+  "s8Title": "8. Limitation of Liability",
+  "s8": "Yousay.fun is provided as is, without warranties of any kind. We do not guarantee the continuous availability of the service and are not responsible for direct or indirect damages resulting from the use or inability to use the platform.",
+  "s9Title": "9. Modifications",
+  "s9": "We reserve the right to modify these Terms and Conditions at any time. Modifications will take effect upon publication on this page. We recommend reviewing them periodically.",
+  "s10Title": "10. Jurisdiction",
+  "s10": "These terms are governed by the laws of the Republic of Costa Rica. Any dispute will be resolved before the competent courts of Costa Rica.",
+  "copyright": "© 2026 Yousay.fun — All rights reserved."
 }
 }
