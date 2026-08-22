@@ -4,6 +4,9 @@ import api from '../services/api'
 interface Category {
   id: number
   slug: string
+  slugEn: string
+  slugFr: string
+  slugPt: string
   isActive: boolean
 }
 

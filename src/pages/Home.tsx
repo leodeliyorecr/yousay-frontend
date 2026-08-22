@@ -12,7 +12,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 export default function Home() {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
-  const { slug } = useParams<{ slug: string }>()
+  const { lang, slug } = useParams<{ lang: string; slug: string }>()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<{ id: number; slug: string } | null>(null)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
@@ -32,15 +32,24 @@ export default function Home() {
     }
   }, [location.state])
 
-  // Si viene un slug en la URL, seleccionar esa categoría
+  // Si viene lang y slug en la URL
   useEffect(() => {
     if (slug && categories.length > 0) {
-      const found = categories.find(c => c.slug === slug)
-      if (found) setActiveCategory({ id: found.id, slug: found.slug })
+      let found = categories.find(c => {
+        if (!lang || lang === 'es') return c.slug === slug
+        if (lang === 'en') return c.slugEn === slug
+        if (lang === 'fr') return c.slugFr === slug
+        if (lang === 'pt-BR' || lang === 'pt') return c.slugPt === slug
+        return false
+      })
+      if (found) {
+        setActiveCategory({ id: found.id, slug: found.slug })
+        if (lang) i18n.changeLanguage(lang)
+      }
     }
-  }, [slug, categories])
+  }, [slug, lang, categories])
 
-  // Select the first category automatically once categories have loaded
+  // Select the first category automatically
   useEffect(() => {
     if (!slug && !activeCategory && categories.length > 0) {
       setActiveCategory({ id: categories[0].id, slug: categories[0].slug })
