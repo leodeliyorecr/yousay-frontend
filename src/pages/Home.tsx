@@ -35,7 +35,7 @@ export default function Home() {
   // Si viene lang y slug en la URL
   useEffect(() => {
     if (slug && categories.length > 0) {
-      let found = categories.find(c => {
+      const found = categories.find(c => {
         if (!lang || lang === 'es') return c.slug === slug
         if (lang === 'en') return c.slugEn === slug
         if (lang === 'fr') return c.slugFr === slug
@@ -51,10 +51,23 @@ export default function Home() {
 
   // Select the first category automatically
   useEffect(() => {
-    if (!slug && !activeCategory && categories.length > 0) {
+    if (!slug && !lang && !activeCategory && categories.length > 0) {
       setActiveCategory({ id: categories[0].id, slug: categories[0].slug })
     }
-  }, [categories, activeCategory, slug])
+  }, [categories, activeCategory, slug, lang])
+
+  const handleSelectCategory = (id: number, catSlug: string) => {
+    setActiveCategory({ id, slug: catSlug })
+    const currentLang = lang || i18n.language || 'es'
+    const cat = categories.find(c => c.slug === catSlug)
+    if (cat) {
+      let urlSlug = catSlug
+      if (currentLang === 'en') urlSlug = cat.slugEn || catSlug
+      else if (currentLang === 'fr') urlSlug = cat.slugFr || catSlug
+      else if (currentLang.startsWith('pt')) urlSlug = cat.slugPt || catSlug
+      navigate(`/${currentLang}/${urlSlug}`)
+    }
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -63,7 +76,7 @@ export default function Home() {
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         activeCategory={activeCategory?.slug ?? ''}
-        onSelectCategory={(id, slug) => setActiveCategory({ id, slug })}
+        onSelectCategory={handleSelectCategory}
         isMobile={isMobile}
       />
       <main className={styles.main}>
