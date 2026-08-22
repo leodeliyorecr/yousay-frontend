@@ -58,7 +58,7 @@ export default function Home() {
 
   const handleSelectCategory = (id: number, catSlug: string) => {
     setActiveCategory({ id, slug: catSlug })
-    const currentLang = lang || i18n.language || 'es'
+    const currentLang = i18n.language || 'es'
     const cat = categories.find(c => c.slug === catSlug)
     if (cat) {
       let urlSlug = catSlug
