@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer'
@@ -12,6 +12,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 export default function Home() {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
+  const { slug } = useParams<{ slug: string }>()
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<{ id: number; slug: string } | null>(null)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
@@ -31,12 +32,20 @@ export default function Home() {
     }
   }, [location.state])
 
+  // Si viene un slug en la URL, seleccionar esa categoría
+  useEffect(() => {
+    if (slug && categories.length > 0) {
+      const found = categories.find(c => c.slug === slug)
+      if (found) setActiveCategory({ id: found.id, slug: found.slug })
+    }
+  }, [slug, categories])
+
   // Select the first category automatically once categories have loaded
   useEffect(() => {
-    if (!activeCategory && categories.length > 0) {
+    if (!slug && !activeCategory && categories.length > 0) {
       setActiveCategory({ id: categories[0].id, slug: categories[0].slug })
     }
-  }, [categories, activeCategory])
+  }, [categories, activeCategory, slug])
 
   return (
     <div className={styles.wrapper}>
