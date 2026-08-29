@@ -47,14 +47,18 @@ export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideVi
         </button>
 
         <div className={styles.actionGroup}>
-          <button className={styles.actionBtn} onClick={handleReplay}>
-            <Play size={16} />
-            {t('actions.view')}
-          </button>
-          <button className={styles.actionBtn} onClick={onEdit}>
-            <Pencil size={16} />
-            {t('actions.edit')}
-          </button>
+          {!hideView && (
+            <button className={styles.actionBtn} onClick={handleReplay}>
+              <Play size={16} />
+              {t('actions.view')}
+            </button>
+          )}
+          {!hideEdit && (
+            <button className={styles.actionBtn} onClick={onEdit}>
+              <Pencil size={16} />
+              {t('actions.edit')}
+            </button>
+          )}
           <button className={styles.actionBtn} onClick={onShare}>
             <Share2 size={16} />
             {t('actions.share')}

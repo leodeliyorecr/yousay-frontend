@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import api from '../services/api'
 import styles from './BusinessCardForm.module.css'
 
 export default function BusinessCardForm() {
   const navigate = useNavigate()
-  const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [form, setForm] = useState({
     fullName: '',
