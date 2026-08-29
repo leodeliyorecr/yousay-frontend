@@ -4,6 +4,7 @@ import TemplateView from './pages/TemplateView'
 import CardView from './pages/CardView'
 import TermsPage from './pages/TermsPage'
 import BusinessCardView from './pages/BusinessCardView'
+import BusinessCardForm from './pages/BusinessCardForm'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/card/:hash" element={<CardView />} />
         <Route path="/terminos" element={<TermsPage />} />
         <Route path="/c/:code" element={<BusinessCardView />} />
+        <Route path="/business-card/create" element={<BusinessCardForm />} />
       </Routes>
     </BrowserRouter>
   )
