@@ -8,9 +8,11 @@ interface TemplateFrameProps {
   onBack: () => void
   onEdit: () => void
   onShare: () => void
+  hideView?: boolean
+  hideEdit?: boolean
 }
 
-export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare }: TemplateFrameProps) {
+export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideView = false, hideEdit = false }: TemplateFrameProps) {
   const { t } = useTranslation()
   const [animationEnded, setAnimationEnded] = useState(false)
   const [animationStarted, setAnimationStarted] = useState(false)
@@ -46,17 +48,17 @@ export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare }: Temp
 
         <div className={styles.actionGroup}>
           <button className={styles.actionBtn} onClick={handleReplay}>
-          <Play size={16} />
-          {t('actions.view')}
-        </button>
-        <button className={styles.actionBtn} onClick={onEdit}>
-          <Pencil size={16} />
-          {t('actions.edit')}
-        </button>
-        <button className={styles.actionBtn} onClick={onShare}>
-          <Share2 size={16} />
-          {t('actions.share')}
-        </button>
+            <Play size={16} />
+            {t('actions.view')}
+          </button>
+          <button className={styles.actionBtn} onClick={onEdit}>
+            <Pencil size={16} />
+            {t('actions.edit')}
+          </button>
+          <button className={styles.actionBtn} onClick={onShare}>
+            <Share2 size={16} />
+            {t('actions.share')}
+          </button>
         </div>
       </div>
 
