@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import TemplateFrame from '../components/TemplateFrame'
@@ -8,6 +8,8 @@ import { useTemplateTexts } from '../hooks/useTemplateTexts'
 import api from '../services/api'
 import { shareYousayLink } from '../utils/share'
 
+const BUSINESS_CARD_CATEGORY_ID = 8
+
 export default function TemplateView() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
@@ -15,18 +17,26 @@ export default function TemplateView() {
   const [showEditModal, setShowEditModal] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [createdHash, setCreatedHash] = useState<string | null>(null)
-
+  const [isBusinessCard, setIsBusinessCard] = useState(false)
   const { texts: templateTexts } = useTemplateTexts(id ?? null, i18n.language)
+
+  useEffect(() => {
+    if (id) {
+      api.get(`/templates/${id}`).then(res => {
+        if (res.data.template?.categoryId === BUSINESS_CARD_CATEGORY_ID) {
+          setIsBusinessCard(true)
+        }
+      }).catch(() => {})
+    }
+  }, [id])
 
   async function handleCreateCard(texts: string[], pin: string | null) {
     if (!id) return
     setIsSubmitting(true)
-
     try {
       const language = await api.get('/languages').then(res =>
         res.data.find((l: any) => l.code === i18n.language)
       )
-
       const response = await api.post('/cards', {
         templateId: id,
         languageId: language.id,
@@ -36,7 +46,6 @@ export default function TemplateView() {
           textContent: text
         }))
       })
-
       setShowEditModal(false)
       setCreatedHash(response.data.hash)
     } catch (error) {
@@ -50,9 +59,15 @@ export default function TemplateView() {
     <>
       <TemplateFrame
         htmlUrl={`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/api/templates/${id}/html?lang=${i18n.language}`}
+        hideView={isBusinessCard}
+        hideEdit={isBusinessCard}
         onBack={() => navigate('/')}
         onEdit={() => {
-          if (templateTexts.length > 0) setShowEditModal(true)
+          if (isBusinessCard) {
+            navigate(`/business-card/create?template=${id}`)
+          } else if (templateTexts.length > 0) {
+            setShowEditModal(true)
+          }
         }}
         onShare={() => shareYousayLink(`https://yousay.fun/share/template/${id}?lang=${i18n.language}`, () => {
           alert(t('successModal.linkCopied'))
