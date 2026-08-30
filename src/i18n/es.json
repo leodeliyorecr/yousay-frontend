@@ -8,7 +8,8 @@
     "amor": "Amor",
     "autoestima": "Autoestima",
     "espiritual": "Espiritual",
-    "dia_madre": "Día de la Madre"
+    "dia_madre": "Día de la Madre",
+    "tarjeta_presentacion": "Tarjetas de Presentación"
   },
   "footer": {
     "terms": "Contacto & Términos"
@@ -88,6 +89,5 @@
   "s10Title": "10. Jurisdicción",
   "s10": "Estos términos se rigen por las leyes de la República de Costa Rica. Cualquier disputa será resuelta ante los tribunales competentes de Costa Rica.",
   "copyright": "© 2026 Yousay.fun — Todos los derechos reservados."
-},
-"tarjeta_presentacion": "Tarjetas de Presentación"
+}
 }

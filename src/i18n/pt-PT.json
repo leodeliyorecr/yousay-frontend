@@ -8,7 +8,8 @@
     "amor": "Amor",
     "autoestima": "Autoestima",
     "espiritual": "Espiritual",
-    "dia_madre": "Dia das Mães"
+    "dia_madre": "Dia das Mães",
+    "tarjeta_presentacion": "Cartões de Apresentação"
   },
   "footer": {
     "contact": "Contacto"
@@ -56,6 +57,5 @@
   },
   "common": {
     "loading": "Carregando..."
-  },
-  "tarjeta_presentacion": "Cartões de Apresentação"
+  }
 }
