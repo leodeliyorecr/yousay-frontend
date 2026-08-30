@@ -54,7 +54,8 @@
     "unlock": "Desbloquear",
     "validating": "Validando..."
   },
-  "common": { 
-    "loading": "Carregando..." 
-  }
+  "common": {
+    "loading": "Carregando..."
+  },
+  "tarjeta_presentacion": "Cartões de Apresentação"
 }

@@ -90,7 +90,13 @@ export default function Home() {
             <div
               key={template.id}
               className={styles.card}
-              onClick={() => navigate(`/template/${template.id}`)}
+              onClick={() => {
+                if (activeCategory?.slug === 'tarjeta_presentacion') {
+                  navigate(`/business-card/create?template=${template.id}`)
+                } else {
+                  navigate(`/template/${template.id}`)
+                }
+              }}
             >
               <div className={styles.cardName}>{template.description}</div>
               <div className={styles.cardBadge}>{t('actions.view')}</div>
