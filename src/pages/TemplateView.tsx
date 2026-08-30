@@ -19,6 +19,7 @@ export default function TemplateView() {
   const [createdHash, setCreatedHash] = useState<string | null>(null)
   const [isBusinessCard, setIsBusinessCard] = useState(false)
   const { texts: templateTexts } = useTemplateTexts(id ?? null, i18n.language)
+  const isTemplateFree = true // temporal
 
   useEffect(() => {
     if (id) {
@@ -60,7 +61,7 @@ export default function TemplateView() {
       <TemplateFrame
         htmlUrl={`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/api/templates/${id}/html?lang=${i18n.language}`}
         hideView={isBusinessCard}
-        hideEdit={isBusinessCard}
+        hideEdit={isBusinessCard && !isTemplateFree}
         onBack={() => navigate('/')}
         onEdit={() => {
           if (isBusinessCard) {
