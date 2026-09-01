@@ -62,15 +62,15 @@ export default function BusinessCardForm() {
           <h2 className={styles.sectionTitle}>Información Principal *</h2>
           <div className={styles.field}>
             <label>Nombre completo *</label>
-            <input name="fullName" value={form.fullName} onChange={handleChange} placeholder="Juan Pérez" />
+            <input name="fullName" value={form.fullName} onChange={handleChange} placeholder="Juan Pérez" maxLength={60} />
           </div>
           <div className={styles.field}>
             <label>Cargo / Profesión *</label>
-            <input name="jobTitle" value={form.jobTitle} onChange={handleChange} placeholder="Gerente de Ventas" />
+            <input name="jobTitle" value={form.jobTitle} onChange={handleChange} placeholder="Gerente de Ventas" maxLength={40} />
           </div>
           <div className={styles.field}>
             <label>Empresa</label>
-            <input name="company" value={form.company} onChange={handleChange} placeholder="Empresa S.A." />
+            <input name="company" value={form.company} onChange={handleChange} placeholder="Empresa S.A." maxLength={50} />
           </div>
         </div>
 
@@ -78,23 +78,23 @@ export default function BusinessCardForm() {
           <h2 className={styles.sectionTitle}>Contacto *</h2>
           <div className={styles.field}>
             <label>Teléfono *</label>
-            <input name="phone1" value={form.phone1} onChange={handleChange} placeholder="+506 8765-4321" />
+            <input name="phone1" value={form.phone1} onChange={handleChange} placeholder="+506 8765-4321" maxLength={15} />
           </div>
           <div className={styles.field}>
             <label>WhatsApp</label>
-            <input name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder="+506 8765-4321" />
+            <input name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder="+506 8765-4321" maxLength={15} />
           </div>
           <div className={styles.field}>
             <label>Teléfono 2</label>
-            <input name="phone2" value={form.phone2} onChange={handleChange} placeholder="+506 8765-4321" />
+            <input name="phone2" value={form.phone2} onChange={handleChange} placeholder="+506 8765-4321" maxLength={15} />
           </div>
           <div className={styles.field}>
             <label>Email</label>
-            <input name="email" value={form.email} onChange={handleChange} placeholder="juan@empresa.com" />
+            <input name="email" value={form.email} onChange={handleChange} placeholder="juan@empresa.com" maxLength={60} />
           </div>
           <div className={styles.field}>
             <label>Sitio Web</label>
-            <input name="website" value={form.website} onChange={handleChange} placeholder="https://empresa.com" />
+            <input name="website" value={form.website} onChange={handleChange} placeholder="https://empresa.com" maxLength={60} />
           </div>
         </div>
 
@@ -102,27 +102,27 @@ export default function BusinessCardForm() {
           <h2 className={styles.sectionTitle}>Redes Sociales</h2>
           <div className={styles.field}>
             <label>LinkedIn (usuario)</label>
-            <input name="linkedin" value={form.linkedin} onChange={handleChange} placeholder="juanperez" />
+            <input name="linkedin" value={form.linkedin} onChange={handleChange} placeholder="juanperez" maxLength={40} />
           </div>
           <div className={styles.field}>
             <label>Facebook (usuario)</label>
-            <input name="facebook" value={form.facebook} onChange={handleChange} placeholder="juanperez" />
+            <input name="facebook" value={form.facebook} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
           <div className={styles.field}>
             <label>Instagram (usuario)</label>
-            <input name="instagram" value={form.instagram} onChange={handleChange} placeholder="juanperez" />
+            <input name="instagram" value={form.instagram} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
           <div className={styles.field}>
             <label>Twitter / X (usuario)</label>
-            <input name="twitter" value={form.twitter} onChange={handleChange} placeholder="juanperez" />
+            <input name="twitter" value={form.twitter} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
           <div className={styles.field}>
             <label>TikTok (usuario)</label>
-            <input name="tiktok" value={form.tiktok} onChange={handleChange} placeholder="juanperez" />
+            <input name="tiktok" value={form.tiktok} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
           <div className={styles.field}>
             <label>YouTube (usuario)</label>
-            <input name="youtube" value={form.youtube} onChange={handleChange} placeholder="juanperez" />
+            <input name="youtube" value={form.youtube} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
         </div>
 
@@ -130,16 +130,16 @@ export default function BusinessCardForm() {
           <h2 className={styles.sectionTitle}>Ubicación</h2>
           <div className={styles.field}>
             <label>Dirección</label>
-            <input name="address" value={form.address} onChange={handleChange} placeholder="Av. Central, San José, Costa Rica" />
+            <input name="address" value={form.address} onChange={handleChange} placeholder="Calle, Ciudad, País" maxLength={100}/>
           </div>
           <div className={styles.fieldRow}>
             <div className={styles.field}>
               <label>Latitud</label>
-              <input name="latitude" value={form.latitude} onChange={handleChange} placeholder="9.9281" />
+              <input name="latitude" type="number" step="0.0001" value={form.latitude} onChange={handleChange} placeholder="9.9281" />
             </div>
             <div className={styles.field}>
               <label>Longitud</label>
-              <input name="longitude" value={form.longitude} onChange={handleChange} placeholder="-84.0907" />
+              <input name="longitude" type="number" step="0.0001" value={form.longitude} onChange={handleChange} placeholder="-84.0907" />
             </div>
           </div>
         </div>
