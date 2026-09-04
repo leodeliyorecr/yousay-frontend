@@ -10,6 +10,15 @@ import { shareYousayLink } from '../utils/share'
 
 const BUSINESS_CARD_CATEGORY_ID = 8
 
+const EXAMPLE_CARDS: Record<string, string> = {
+  'es': 'JUAPER001',
+  'en': 'JOASMI001',
+  'fr': 'JEADUP001',
+  'pt-BR': 'JOASIL001',
+  'pt': 'JOASIL001',
+  'pt-PT': 'JOASOA001',
+}
+
 export default function TemplateView() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
@@ -56,10 +65,16 @@ export default function TemplateView() {
     }
   }
 
+  const exampleCode = EXAMPLE_CARDS[i18n.language] ?? 'JUAPER001'
+  const apiBase = import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'
+
   return (
     <>
       <TemplateFrame
-        htmlUrl={`${import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'}/api/templates/${id}/html?lang=${i18n.language}`}
+        htmlUrl={isBusinessCard
+          ? `${apiBase}/api/bc/${exampleCode}/html`
+          : `${apiBase}/api/templates/${id}/html?lang=${i18n.language}`
+        }
         hideView={isBusinessCard}
         hideEdit={isBusinessCard && !isTemplateFree}
         onBack={() => navigate('/')}
