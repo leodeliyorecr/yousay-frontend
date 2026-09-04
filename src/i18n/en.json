@@ -89,5 +89,26 @@
   "s10Title": "10. Jurisdiction",
   "s10": "These terms are governed by the laws of the Republic of Costa Rica. Any dispute will be resolved before the competent courts of Costa Rica.",
   "copyright": "© 2026 Yousay.fun — All rights reserved."
+},
+"businessCardForm": {
+  "title": "Create Business Card",
+  "sectionMain": "Main Information *",
+  "fullName": "Full Name *",
+  "jobTitle": "Job Title *",
+  "company": "Company",
+  "sectionContact": "Contact *",
+  "phone1": "Phone *",
+  "whatsapp": "WhatsApp",
+  "phone2": "Phone 2",
+  "email": "Email",
+  "website": "Website",
+  "sectionSocial": "Social Media",
+  "sectionLocation": "Location",
+  "address": "Address",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "submit": "Create my card",
+  "submitting": "Creating...",
+  "validation": "Name, job title and phone are required"
 }
 }

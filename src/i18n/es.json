@@ -89,5 +89,26 @@
   "s10Title": "10. Jurisdicción",
   "s10": "Estos términos se rigen por las leyes de la República de Costa Rica. Cualquier disputa será resuelta ante los tribunales competentes de Costa Rica.",
   "copyright": "© 2026 Yousay.fun — Todos los derechos reservados."
+},
+"businessCardForm": {
+  "title": "Crear Tarjeta de Presentación",
+  "sectionMain": "Información Principal *",
+  "fullName": "Nombre completo *",
+  "jobTitle": "Cargo / Profesión *",
+  "company": "Empresa",
+  "sectionContact": "Contacto *",
+  "phone1": "Teléfono *",
+  "whatsapp": "WhatsApp",
+  "phone2": "Teléfono 2",
+  "email": "Email",
+  "website": "Sitio Web",
+  "sectionSocial": "Redes Sociales",
+  "sectionLocation": "Ubicación",
+  "address": "Dirección",
+  "latitude": "Latitud",
+  "longitude": "Longitud",
+  "submit": "Crear mi tarjeta",
+  "submitting": "Creando...",
+  "validation": "Nombre, cargo y teléfono son obligatorios"
 }
 }

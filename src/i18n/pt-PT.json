@@ -57,5 +57,26 @@
   },
   "common": {
     "loading": "Carregando..."
-  }
+  },
+  "businessCardForm": {
+  "title": "Criar Cartão de Apresentação",
+  "sectionMain": "Informações Principais *",
+  "fullName": "Nome completo *",
+  "jobTitle": "Cargo / Profissão *",
+  "company": "Empresa",
+  "sectionContact": "Contacto *",
+  "phone1": "Telefone *",
+  "whatsapp": "WhatsApp",
+  "phone2": "Telefone 2",
+  "email": "Email",
+  "website": "Website",
+  "sectionSocial": "Redes Sociais",
+  "sectionLocation": "Localização",
+  "address": "Morada",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "submit": "Criar o meu cartão",
+  "submitting": "A criar...",
+  "validation": "Nome, cargo e telefone são obrigatórios"
+}
 }

@@ -57,5 +57,26 @@
 },
  "common": { 
   "loading": "Carregando..." 
+},
+"businessCardForm": {
+  "title": "Criar Cartão de Visita",
+  "sectionMain": "Informações Principais *",
+  "fullName": "Nome completo *",
+  "jobTitle": "Cargo / Profissão *",
+  "company": "Empresa",
+  "sectionContact": "Contato *",
+  "phone1": "Telefone *",
+  "whatsapp": "WhatsApp",
+  "phone2": "Telefone 2",
+  "email": "Email",
+  "website": "Site Web",
+  "sectionSocial": "Redes Sociais",
+  "sectionLocation": "Localização",
+  "address": "Endereço",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "submit": "Criar meu cartão",
+  "submitting": "Criando...",
+  "validation": "Nome, cargo e telefone são obrigatórios"
 }
 }
