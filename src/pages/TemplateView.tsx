@@ -30,12 +30,16 @@ export default function TemplateView() {
   const [loadingTemplate, setLoadingTemplate] = useState(true)
   const { texts: templateTexts } = useTemplateTexts(id ?? null, i18n.language)
   const isTemplateFree = true // temporal
+  const [templateStyle, setTemplateStyle] = useState('')
 
   useEffect(() => {
-  if (id) {
+    if (id) {
       api.get(`/templates/${id}`).then(res => {
         if (res.data.template?.categoryId === BUSINESS_CARD_CATEGORY_ID) {
           setIsBusinessCard(true)
+        }
+        if (res.data.template?.templateStyle) {
+          setTemplateStyle(res.data.template.templateStyle)
         }
       }).catch(() => {}).finally(() => setLoadingTemplate(false))
     }
@@ -75,7 +79,7 @@ export default function TemplateView() {
     <>
       <TemplateFrame
         htmlUrl={isBusinessCard
-          ? `${apiBase}/api/bc/${exampleCode}/html?lang=${i18n.language}`
+          ? `${apiBase}/api/bc/${exampleCode}/html?lang=${i18n.language}&style=${templateStyle}`
           : `${apiBase}/api/templates/${id}/html?lang=${i18n.language}`
         }
         hideView={isBusinessCard}
