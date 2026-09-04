@@ -109,6 +109,16 @@
   "longitude": "Longitud",
   "submit": "Crear mi tarjeta",
   "submitting": "Creando...",
-  "validation": "Nombre, cargo y teléfono son obligatorios"
+  "validation": "Nombre, cargo y teléfono son obligatorios",
+  "placeholderName": "Juan Pérez",
+  "placeholderJob": "Gerente de Ventas",
+  "placeholderCompany": "Empresa S.A.",
+  "placeholderPhone": "+506 8765-4321",
+  "placeholderEmail": "juan@empresa.com",
+  "placeholderWebsite": "https://empresa.com",
+  "placeholderSocial": "usuario",
+  "placeholderAddress": "Calle, Ciudad, País",
+  "placeholderLat": "Ej: 9.9281",
+  "placeholderLng": "Ej: -84.0907"
 }
 }

@@ -77,6 +77,16 @@
   "longitude": "Longitude",
   "submit": "Criar meu cartão",
   "submitting": "Criando...",
-  "validation": "Nome, cargo e telefone são obrigatórios"
+  "validation": "Nome, cargo e telefone são obrigatórios",
+  "placeholderName": "João Silva",
+  "placeholderJob": "Gerente de Vendas",
+  "placeholderCompany": "Empresa S.A.",
+  "placeholderPhone": "+55 11 91234-5678",
+  "placeholderEmail": "joao@empresa.com.br",
+  "placeholderWebsite": "https://empresa.com.br",
+  "placeholderSocial": "usuario",
+  "placeholderAddress": "Rua, Cidade, País",
+  "placeholderLat": "Ex: -23.5505",
+  "placeholderLng": "Ex: -46.6333"
 }
 }

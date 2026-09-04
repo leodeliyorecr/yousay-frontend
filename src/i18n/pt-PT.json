@@ -77,6 +77,16 @@
   "longitude": "Longitude",
   "submit": "Criar o meu cartão",
   "submitting": "A criar...",
-  "validation": "Nome, cargo e telefone são obrigatórios"
+  "validation": "Nome, cargo e telefone são obrigatórios",
+  "placeholderName": "João Soares",
+  "placeholderJob": "Gestor Comercial",
+  "placeholderCompany": "Empresa Lda.",
+  "placeholderPhone": "+351 91 234 56 78",
+  "placeholderEmail": "joao@empresa.pt",
+  "placeholderWebsite": "https://empresa.pt",
+  "placeholderSocial": "utilizador",
+  "placeholderAddress": "Rua, Cidade, País",
+  "placeholderLat": "Ex: 38.7169",
+  "placeholderLng": "Ex: -9.1399"
 }
 }

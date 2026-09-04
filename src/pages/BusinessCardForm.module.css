@@ -103,3 +103,7 @@
 
 .submitBtn:hover { opacity: 0.9; }
 .submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.field input::placeholder {
+  color: #dae8f8;
+}

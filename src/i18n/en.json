@@ -109,6 +109,16 @@
   "longitude": "Longitude",
   "submit": "Create my card",
   "submitting": "Creating...",
-  "validation": "Name, job title and phone are required"
+  "validation": "Name, job title and phone are required",
+  "placeholderName": "John Smith",
+  "placeholderJob": "Sales Manager",
+  "placeholderCompany": "Company Inc.",
+  "placeholderPhone": "+1 555 123-4567",
+  "placeholderEmail": "john@company.com",
+  "placeholderWebsite": "https://company.com",
+  "placeholderSocial": "username",
+  "placeholderAddress": "Street, City, Country",
+  "placeholderLat": "Ex: 40.7128",
+  "placeholderLng": "Ex: -74.0060"
 }
 }
