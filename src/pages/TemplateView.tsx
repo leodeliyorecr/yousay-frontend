@@ -72,7 +72,7 @@ export default function TemplateView() {
     <>
       <TemplateFrame
         htmlUrl={isBusinessCard
-          ? `${apiBase}/api/bc/${exampleCode}/html`
+          ? `${apiBase}/api/bc/${exampleCode}/html?lang=${i18n.language}`
           : `${apiBase}/api/templates/${id}/html?lang=${i18n.language}`
         }
         hideView={isBusinessCard}
