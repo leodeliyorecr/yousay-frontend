@@ -8,7 +8,8 @@
     "amor": "Love",
     "autoestima": "Self Esteem",
     "espiritual": "Spiritual",
-    "dia_madre": "Mother's Day"
+    "dia_madre": "Mother's Day",
+    "tarjeta_presentacion": "Business Cards"
   },
   "footer": {
     "terms": "Contact & Terms"
@@ -88,6 +89,5 @@
   "s10Title": "10. Jurisdiction",
   "s10": "These terms are governed by the laws of the Republic of Costa Rica. Any dispute will be resolved before the competent courts of Costa Rica.",
   "copyright": "© 2026 Yousay.fun — All rights reserved."
-},
-"tarjeta_presentacion": "Business Cards"
+}
 }

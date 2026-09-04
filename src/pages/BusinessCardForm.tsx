@@ -1,11 +1,14 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../services/api'
 import styles from './BusinessCardForm.module.css'
 
 export default function BusinessCardForm() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const templateId = searchParams.get('template') ?? ''
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [templateStyle, setTemplateStyle] = useState('azul1')
   const [form, setForm] = useState({
     fullName: '',
     jobTitle: '',
@@ -26,6 +29,16 @@ export default function BusinessCardForm() {
     longitude: '',
   })
 
+  useEffect(() => {
+    if (templateId) {
+      api.get(`/templates/${templateId}`).then(res => {
+        if (res.data.template?.templateStyle) {
+          setTemplateStyle(res.data.template.templateStyle)
+        }
+      }).catch(() => {})
+    }
+  }, [templateId])
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
@@ -39,6 +52,7 @@ export default function BusinessCardForm() {
     try {
       const response = await api.post('/business-cards', {
         ...form,
+        templateStyle: templateStyle,
         latitude: form.latitude ? parseFloat(form.latitude) : null,
         longitude: form.longitude ? parseFloat(form.longitude) : null,
       })
@@ -56,7 +70,6 @@ export default function BusinessCardForm() {
         <button className={styles.backBtn} onClick={() => navigate('/')}>← Regresar</button>
         <h1 className={styles.title}>Crear Tarjeta de Presentación</h1>
       </div>
-
       <div className={styles.form}>
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Información Principal *</h2>
@@ -73,7 +86,6 @@ export default function BusinessCardForm() {
             <input name="company" value={form.company} onChange={handleChange} placeholder="Empresa S.A." maxLength={50} />
           </div>
         </div>
-
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Contacto *</h2>
           <div className={styles.field}>
@@ -97,7 +109,6 @@ export default function BusinessCardForm() {
             <input name="website" value={form.website} onChange={handleChange} placeholder="https://empresa.com" maxLength={60} />
           </div>
         </div>
-
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Redes Sociales</h2>
           <div className={styles.field}>
@@ -125,12 +136,11 @@ export default function BusinessCardForm() {
             <input name="youtube" value={form.youtube} onChange={handleChange} placeholder="juanperez" maxLength={30} />
           </div>
         </div>
-
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>Ubicación</h2>
           <div className={styles.field}>
             <label>Dirección</label>
-            <input name="address" value={form.address} onChange={handleChange} placeholder="Calle, Ciudad, País" maxLength={100}/>
+            <input name="address" value={form.address} onChange={handleChange} placeholder="Calle, Ciudad, País" maxLength={100} />
           </div>
           <div className={styles.fieldRow}>
             <div className={styles.field}>
@@ -143,7 +153,6 @@ export default function BusinessCardForm() {
             </div>
           </div>
         </div>
-
         <button className={styles.submitBtn} onClick={handleSubmit} disabled={isSubmitting}>
           {isSubmitting ? 'Creando...' : 'Crear mi tarjeta'}
         </button>
