@@ -27,16 +27,17 @@ export default function TemplateView() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [createdHash, setCreatedHash] = useState<string | null>(null)
   const [isBusinessCard, setIsBusinessCard] = useState(false)
+  const [loadingTemplate, setLoadingTemplate] = useState(true)
   const { texts: templateTexts } = useTemplateTexts(id ?? null, i18n.language)
   const isTemplateFree = true // temporal
 
   useEffect(() => {
-    if (id) {
+  if (id) {
       api.get(`/templates/${id}`).then(res => {
         if (res.data.template?.categoryId === BUSINESS_CARD_CATEGORY_ID) {
           setIsBusinessCard(true)
         }
-      }).catch(() => {})
+      }).catch(() => {}).finally(() => setLoadingTemplate(false))
     }
   }, [id])
 
@@ -67,6 +68,8 @@ export default function TemplateView() {
 
   const exampleCode = EXAMPLE_CARDS[i18n.language] ?? 'JUAPER001'
   const apiBase = import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'
+
+  if (loadingTemplate) return null
 
   return (
     <>
