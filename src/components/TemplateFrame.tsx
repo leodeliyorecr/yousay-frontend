@@ -10,9 +10,10 @@ interface TemplateFrameProps {
   onShare: () => void
   hideView?: boolean
   hideEdit?: boolean
+  editLabel?: string
 }
 
-export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideView = false, hideEdit = false }: TemplateFrameProps) {
+export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideView = false, hideEdit = false, editLabel }: TemplateFrameProps) {
   const { t } = useTranslation()
   const [animationEnded, setAnimationEnded] = useState(false)
   const [animationStarted, setAnimationStarted] = useState(false)
@@ -56,7 +57,7 @@ export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideVi
           {!hideEdit && (
             <button className={styles.actionBtn} onClick={onEdit}>
               <Pencil size={16} />
-              {t('actions.edit')}
+              {editLabel ?? t('actions.edit')}
             </button>
           )}
           <button className={styles.actionBtn} onClick={onShare}>

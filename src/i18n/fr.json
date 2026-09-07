@@ -16,78 +16,79 @@
     "contact": "Contact"
   },
   "errors": {
-  "loadCategories": "Erreur lors du chargement des catégories",
-  "loadTemplates": "Erreur lors du chargement des modèles",
-  "loadCard": "Erreur lors du chargement de la carte",
-  "cardExpired": "Cette carte a expiré",
-  "cardNotFound": "Carte introuvable",
-  "invalidPin": "PIN incorrect",
-  "generic": "Quelque chose s'est mal passé, réessayez",
-  "cardExpiredTitle": "Cette carte a expiré",
-  "cardExpiredSubtitle": "Les messages Yousay durent 3 jours. Créez-en un nouveau pour continuer à partager.",
-  "goHome": "Retour à l'accueil"
+    "loadCategories": "Erreur lors du chargement des catégories",
+    "loadTemplates": "Erreur lors du chargement des modèles",
+    "loadCard": "Erreur lors du chargement de la carte",
+    "cardExpired": "Cette carte a expiré",
+    "cardNotFound": "Carte introuvable",
+    "invalidPin": "PIN incorrect",
+    "generic": "Quelque chose s'est mal passé, réessayez",
+    "cardExpiredTitle": "Cette carte a expiré",
+    "cardExpiredSubtitle": "Les messages Yousay durent 3 jours. Créez-en un nouveau pour continuer à partager.",
+    "goHome": "Retour à l'accueil"
   },
   "actions": {
-  "back": "Retour",
-  "view": "Voir",
-  "edit": "Modifier",
-  "share": "Partager"
-},
-"editModal": {
-  "title": "Personnalisez votre message",
-  "textLabel": "Texte {{number}}",
-  "usePin": "Protéger avec un code PIN à 4 chiffres",
-  "cancel": "Annuler",
-  "create": "Créer",
-  "creating": "Création..."
-},
-"successModal": {
-  "title": "Votre message est prêt !",
-  "subtitle": "Partagez-le ou ouvrez-le pour le voir",
-  "open": "Ouvrir",
-  "share": "Partager",
-  "close": "Fermer",
-  "linkCopied": "Lien copié dans le presse-papiers"
-},
-"pinGate": {
-  "title": "Ce message est protégé",
-  "subtitle": "Entrez le code PIN à 4 chiffres pour le voir",
-  "invalidPin": "PIN incorrect, réessayez",
-  "unlock": "Déverrouiller",
-  "validating": "Validation..."
-},
- "common": { 
-  "loading": "Chargement..." 
-},
-"businessCardForm": {
-  "title": "Créer une Carte de Visite",
-  "sectionMain": "Informations Principales *",
-  "fullName": "Nom complet *",
-  "jobTitle": "Poste / Profession *",
-  "company": "Entreprise",
-  "sectionContact": "Contact *",
-  "phone1": "Téléphone *",
-  "whatsapp": "WhatsApp",
-  "phone2": "Téléphone 2",
-  "email": "Email",
-  "website": "Site Web",
-  "sectionSocial": "Réseaux Sociaux",
-  "sectionLocation": "Localisation",
-  "address": "Adresse",
-  "latitude": "Latitude",
-  "longitude": "Longitude",
-  "submit": "Créer ma carte",
-  "submitting": "Création...",
-  "validation": "Nom, poste et téléphone sont obligatoires",
-  "placeholderName": "Jean Dupont",
-  "placeholderJob": "Directeur Commercial",
-  "placeholderCompany": "Entreprise S.A.",
-  "placeholderPhone": "+33 6 12 34 56 78",
-  "placeholderEmail": "jean@entreprise.fr",
-  "placeholderWebsite": "https://entreprise.fr",
-  "placeholderSocial": "utilisateur",
-  "placeholderAddress": "Rue, Ville, Pays",
-  "placeholderLat": "Ex: 48.8566",
-  "placeholderLng": "Ex: 2.3522"
-}
+    "back": "Retour",
+    "view": "Voir",
+    "edit": "Modifier",
+    "share": "Partager",
+    "createMyVersion": "Créer ma version"
+  },
+  "editModal": {
+    "title": "Personnalisez votre message",
+    "textLabel": "Texte {{number}}",
+    "usePin": "Protéger avec un code PIN à 4 chiffres",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "creating": "Création..."
+  },
+  "successModal": {
+    "title": "Votre message est prêt !",
+    "subtitle": "Partagez-le ou ouvrez-le pour le voir",
+    "open": "Ouvrir",
+    "share": "Partager",
+    "close": "Fermer",
+    "linkCopied": "Lien copié dans le presse-papiers"
+  },
+  "pinGate": {
+    "title": "Ce message est protégé",
+    "subtitle": "Entrez le code PIN à 4 chiffres pour le voir",
+    "invalidPin": "PIN incorrect, réessayez",
+    "unlock": "Déverrouiller",
+    "validating": "Validation..."
+  },
+  "common": {
+    "loading": "Chargement..."
+  },
+  "businessCardForm": {
+    "title": "Créer une Carte de Visite",
+    "sectionMain": "Informations Principales *",
+    "fullName": "Nom complet *",
+    "jobTitle": "Poste / Profession *",
+    "company": "Entreprise",
+    "sectionContact": "Contact *",
+    "phone1": "Téléphone *",
+    "whatsapp": "WhatsApp",
+    "phone2": "Téléphone 2",
+    "email": "Email",
+    "website": "Site Web",
+    "sectionSocial": "Réseaux Sociaux",
+    "sectionLocation": "Localisation",
+    "address": "Adresse",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "submit": "Créer ma carte",
+    "submitting": "Création...",
+    "validation": "Nom, poste et téléphone sont obligatoires",
+    "placeholderName": "Jean Dupont",
+    "placeholderJob": "Directeur Commercial",
+    "placeholderCompany": "Entreprise S.A.",
+    "placeholderPhone": "+33 6 12 34 56 78",
+    "placeholderEmail": "jean@entreprise.fr",
+    "placeholderWebsite": "https://entreprise.fr",
+    "placeholderSocial": "utilisateur",
+    "placeholderAddress": "Rue, Ville, Pays",
+    "placeholderLat": "Ex: 48.8566",
+    "placeholderLng": "Ex: 2.3522"
+  }
 }
