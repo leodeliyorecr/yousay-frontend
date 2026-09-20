@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Laugh, Heart, Trophy, Cake, Star, Sparkles, CreditCard, type LucideIcon } from 'lucide-react'
+import { Laugh, Heart, Trophy, Cake, Star, Sparkles, CreditCard, Building2, type LucideIcon } from 'lucide-react'
 import { useCategories } from '../hooks/useCategories'
 import styles from './Sidebar.module.css'
 
@@ -11,6 +11,7 @@ const ICONS: Record<string, LucideIcon> = {
   autoestima: Star,
   espiritual: Sparkles,
   tarjeta_presentacion: CreditCard,
+  new_york_fans: Building2,
 }
 
 interface SidebarProps {
