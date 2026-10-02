@@ -58,7 +58,8 @@
     "subtitle": "Entrez le code PIN à 4 chiffres pour le voir",
     "invalidPin": "PIN incorrect, réessayez",
     "unlock": "Déverrouiller",
-    "validating": "Validation..."
+    "validating": "Validation...",
+    "tooManyAttempts": "Trop de tentatives. Patientez un moment et réessayez."
   },
   "common": {
     "loading": "Chargement..."

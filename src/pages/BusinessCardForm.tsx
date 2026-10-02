@@ -49,6 +49,7 @@ export default function BusinessCardForm() {
       navigate(`/c/${response.data.code}`)
     } catch (error) {
       console.error('Error creando tarjeta:', error)
+      alert(t('errors.generic'))
     } finally {
       setIsSubmitting(false)
     }
@@ -80,15 +81,15 @@ export default function BusinessCardForm() {
           <h2 className={styles.sectionTitle}>{t('businessCardForm.sectionContact')}</h2>
           <div className={styles.field}>
             <label>{t('businessCardForm.phone1')}</label>
-            <input name="phone1" value={form.phone1} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={15} />
+            <input name="phone1" value={form.phone1} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={20} />
           </div>
           <div className={styles.field}>
             <label>{t('businessCardForm.whatsapp')}</label>
-            <input name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={15} />
+            <input name="whatsapp" value={form.whatsapp} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={20} />
           </div>
           <div className={styles.field}>
             <label>{t('businessCardForm.phone2')}</label>
-            <input name="phone2" value={form.phone2} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={15} />
+            <input name="phone2" value={form.phone2} onChange={handleChange} placeholder={t('businessCardForm.placeholderPhone')} maxLength={20} />
           </div>
           <div className={styles.field}>
             <label>{t('businessCardForm.email')}</label>

@@ -8,6 +8,7 @@ interface TemplateText {
   position: number
   textContent: string
   isEditable: boolean
+  maxLength?: number
 }
 
 export function useTemplateTexts(templateId: string | null, languageCode: string) {

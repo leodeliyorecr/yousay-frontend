@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import TemplateFrame from '../components/TemplateFrame'
 import { shareYousayLink } from '../utils/share'
+import { API_BASE, PUBLIC_SITE } from '../services/api'
 
 export default function BusinessCardView() {
   const { code } = useParams<{ code: string }>()
@@ -12,12 +13,12 @@ export default function BusinessCardView() {
 
   return (
     <TemplateFrame
-      htmlUrl={`/api/bc/${code}/html`}
+      htmlUrl={`${API_BASE}/api/bc/${encodeURIComponent(code)}/html`}
       hideView={true}
       editLabel={t('actions.createMyVersion')}
       onBack={() => navigate('/')}
       onEdit={() => navigate(`/business-card/create`)}
-      onShare={() => shareYousayLink(`https://yousay.fun/c/${code}`, () => {
+      onShare={() => shareYousayLink(`${PUBLIC_SITE}/c/${code}`, () => {
         alert(t('successModal.linkCopied'))
       })}
     />

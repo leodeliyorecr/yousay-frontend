@@ -57,7 +57,8 @@
     "subtitle": "Enter the 4-digit PIN to view it",
     "invalidPin": "Incorrect PIN, try again",
     "unlock": "Unlock",
-    "validating": "Validating..."
+    "validating": "Validating...",
+    "tooManyAttempts": "Too many attempts. Please wait a while and try again."
   },
   "common": {
     "loading": "Loading..."

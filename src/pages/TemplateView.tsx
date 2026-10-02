@@ -5,7 +5,7 @@ import TemplateFrame from '../components/TemplateFrame'
 import EditModal from '../components/EditModal'
 import SuccessModal from '../components/SuccessModal.tsx'
 import { useTemplateTexts } from '../hooks/useTemplateTexts'
-import api from '../services/api'
+import api, { API_BASE, PUBLIC_SITE } from '../services/api'
 import { shareYousayLink } from '../utils/share'
 
 const BUSINESS_CARD_CATEGORY_ID = 8
@@ -50,8 +50,9 @@ export default function TemplateView() {
     setIsSubmitting(true)
     try {
       const language = await api.get('/languages').then(res =>
-        res.data.find((l: any) => l.code === i18n.language)
+        res.data.find((l: { id: number; code: string }) => l.code === i18n.language)
       )
+      if (!language) throw new Error(`Language not found: ${i18n.language}`)
       const response = await api.post('/cards', {
         templateId: id,
         languageId: language.id,
@@ -65,13 +66,14 @@ export default function TemplateView() {
       setCreatedHash(response.data.hash)
     } catch (error) {
       console.error('Error creando card:', error)
+      alert(t('errors.generic'))
     } finally {
       setIsSubmitting(false)
     }
   }
 
   const exampleCode = EXAMPLE_CARDS[i18n.language] ?? 'JUAPER001'
-  const apiBase = import.meta.env.VITE_API_BASE_URL || 'https://localhost:7179'
+  const apiBase = API_BASE
 
   if (loadingTemplate) return null
 
@@ -92,13 +94,14 @@ export default function TemplateView() {
             setShowEditModal(true)
           }
         }}
-        onShare={() => shareYousayLink(`https://yousay.fun/share/template/${id}?lang=${i18n.language}`, () => {
+        onShare={() => shareYousayLink(`${PUBLIC_SITE}/share/template/${id}?lang=${i18n.language}`, () => {
           alert(t('successModal.linkCopied'))
         })}
       />
       {showEditModal && (
         <EditModal
           initialTexts={templateTexts.map(t => t.textContent)}
+          maxLengths={templateTexts.map(t => t.maxLength ?? 15)}
           onCancel={() => setShowEditModal(false)}
           onCreate={handleCreateCard}
           isSubmitting={isSubmitting}

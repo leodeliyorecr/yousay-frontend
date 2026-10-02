@@ -7,7 +7,7 @@ import styles from './PinGate.module.css'
 
 interface PinGateProps {
   hash: string
-  onValidated: (texts: { position: number; textContent: string }[]) => void
+  onValidated: (texts: { position: number; textContent: string }[], token: string) => void
 }
 
 export default function PinGate({ hash, onValidated }: PinGateProps) {
@@ -15,6 +15,7 @@ export default function PinGate({ hash, onValidated }: PinGateProps) {
   const navigate = useNavigate()
   const [digits, setDigits] = useState(['', '', '', ''])
   const [error, setError] = useState(false)
+  const [tooMany, setTooMany] = useState(false)
   const [isValidating, setIsValidating] = useState(false)
 
   function handleChange(index: number, value: string) {
@@ -23,6 +24,7 @@ export default function PinGate({ hash, onValidated }: PinGateProps) {
     updated[index] = value
     setDigits(updated)
     setError(false)
+    setTooMany(false)
 
     if (value && index < 3) {
       document.getElementById(`gate-pin-${index + 1}`)?.focus()
@@ -37,14 +39,16 @@ export default function PinGate({ hash, onValidated }: PinGateProps) {
     try {
       const response = await api.post(`/cards/${hash}/unlock`, { pin })
       if (response.data.valid) {
-        onValidated(response.data.texts)
+        onValidated(response.data.texts, response.data.token)
       } else {
         setError(true)
         setDigits(['', '', '', ''])
         document.getElementById('gate-pin-0')?.focus()
       }
-    } catch {
-      setError(true)
+    } catch (err: unknown) {
+      const status = (err as { response?: { status?: number } })?.response?.status
+      if (status === 429) setTooMany(true)
+      else setError(true)
     } finally {
       setIsValidating(false)
     }
@@ -78,6 +82,7 @@ export default function PinGate({ hash, onValidated }: PinGateProps) {
       </div>
 
       {error && <p className={styles.error}>{t('pinGate.invalidPin')}</p>}
+      {tooMany && <p className={styles.error}>{t('pinGate.tooManyAttempts')}</p>}
 
       <button
         className={styles.submit}

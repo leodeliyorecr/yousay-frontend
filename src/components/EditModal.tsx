@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from './EditModal.module.css'
 
-const MAX_CHARS = 15
+// Límite por defecto si la plantilla no define max_length
+const DEFAULT_MAX_CHARS = 15
+// A partir de este largo el campo se muestra como área de texto de varias líneas
+const MULTILINE_FROM = 30
 
 interface EditModalProps {
   initialTexts: string[]
+  maxLengths?: number[]
   onCancel: () => void
   onCreate: (texts: string[], pin: string | null) => void
   isSubmitting: boolean
 }
 
-export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitting }: EditModalProps) {
+export default function EditModal({ initialTexts, maxLengths, onCancel, onCreate, isSubmitting }: EditModalProps) {
   const { t } = useTranslation()
   const [texts, setTexts] = useState<string[]>(initialTexts)
   const [usePin, setUsePin] = useState(false)
@@ -22,8 +26,12 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
     setTexts(initialTexts)
   }, [initialTexts])
 
-  function handleTextChange(index: number, value: string) {
-    if (value.length > MAX_CHARS) return
+  const maxFor = (index: number) => maxLengths?.[index] ?? DEFAULT_MAX_CHARS
+
+  function handleTextChange(index: number, rawValue: string) {
+    // Sin saltos de línea: el texto se muestra como un solo párrafo en la plantilla
+    const value = rawValue.replace(/[\r\n]+/g, ' ')
+    if (value.length > maxFor(index)) return
     const updated = [...texts]
     updated[index] = value
     setTexts(updated)
@@ -69,23 +77,36 @@ export default function EditModal({ initialTexts, onCancel, onCreate, isSubmitti
       <div className={styles.modal}>
         <h3 className={styles.title}>{t('editModal.title')}</h3>
 
-        {texts.map((text, index) => (
-          <div key={index} className={styles.field}>
-            <div className={styles.label}>
-              <span>{t('editModal.textLabel', { number: index + 1 })}</span>
-              <span className={`${styles.charCount} ${text.length >= MAX_CHARS ? styles.charCountWarning : ''}`}>
-                {text.length}/{MAX_CHARS}
-              </span>
+        {texts.map((text, index) => {
+          const max = maxFor(index)
+          return (
+            <div key={index} className={styles.field}>
+              <div className={styles.label}>
+                <span>{t('editModal.textLabel', { number: index + 1 })}</span>
+                <span className={`${styles.charCount} ${text.length >= max ? styles.charCountWarning : ''}`}>
+                  {text.length}/{max}
+                </span>
+              </div>
+              {max > MULTILINE_FROM ? (
+                <textarea
+                  className={`${styles.input} ${styles.textarea}`}
+                  rows={4}
+                  value={text}
+                  maxLength={max}
+                  onChange={e => handleTextChange(index, e.target.value)}
+                />
+              ) : (
+                <input
+                  className={styles.input}
+                  type="text"
+                  value={text}
+                  maxLength={max}
+                  onChange={e => handleTextChange(index, e.target.value)}
+                />
+              )}
             </div>
-            <input
-              className={styles.input}
-              type="text"
-              value={text}
-              maxLength={MAX_CHARS}
-              onChange={e => handleTextChange(index, e.target.value)}
-            />
-          </div>
-        ))}
+          )
+        })}
 
         <div className={styles.pinSection}>
           <div className={styles.toggleRow}>

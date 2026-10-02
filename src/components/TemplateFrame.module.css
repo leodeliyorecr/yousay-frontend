@@ -1,8 +1,14 @@
 .stage {
-  position: relative;
+  /* Ocupa exactamente la pantalla visible y no deja que la página haga scroll.
+     100vh en móvil incluye la barra del navegador y deja parte de la tarjeta
+     fuera de pantalla; 100dvh es el alto visible real. */
+  position: fixed;
+  inset: 0;
   width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
   background: var(--bg-dark);
   display: flex;
   flex-direction: column;

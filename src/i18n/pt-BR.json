@@ -57,7 +57,8 @@
     "subtitle": "Digite o PIN de 4 dígitos para ver",
     "invalidPin": "PIN incorreto, tente novamente",
     "unlock": "Desbloquear",
-    "validating": "Validando..."
+    "validating": "Validando...",
+    "tooManyAttempts": "Muitas tentativas. Aguarde um pouco e tente novamente."
   },
   "common": {
     "loading": "Carregando..."

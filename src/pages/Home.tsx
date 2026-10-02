@@ -39,12 +39,12 @@ export default function Home() {
         if (!lang || lang === 'es') return c.slug === slug
         if (lang === 'en') return c.slugEn === slug
         if (lang === 'fr') return c.slugFr === slug
-        if (lang === 'pt-BR' || lang === 'pt') return c.slugPt === slug
+        if (lang.startsWith('pt')) return c.slugPt === slug
         return false
       })
       if (found) {
         setActiveCategory({ id: found.id, slug: found.slug })
-        if (lang) i18n.changeLanguage(lang)
+        if (lang) i18n.changeLanguage(lang === 'pt' ? 'pt-BR' : lang)
       }
     }
   }, [slug, lang, categories])
@@ -84,7 +84,7 @@ export default function Home() {
           {activeCategory ? t(`categories.${activeCategory.slug}`) : t('common.loading')}
         </div>
         {loading && <LoadingSpinner />}
-        {errorKey && <p>{errorKey}</p>}
+        {errorKey && <p>{t(errorKey)}</p>}
         <div className={styles.grid}>
           {templates.map(template => (
             <div

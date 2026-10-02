@@ -19,6 +19,30 @@ export default function TemplateFrame({ htmlUrl, onBack, onEdit, onShare, hideVi
   const [animationStarted, setAnimationStarted] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
+  // Mientras se muestra la tarjeta, la página de fondo no puede hacer scroll:
+  // así los gestos dentro del juego (raspar, arrastrar) no mueven la ventana.
+  useEffect(() => {
+    const html = document.documentElement
+    const body = document.body
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      htmlOverscroll: html.style.overscrollBehavior,
+      bodyOverscroll: body.style.overscrollBehavior,
+    }
+    html.style.overflow = 'hidden'
+    body.style.overflow = 'hidden'
+    html.style.overscrollBehavior = 'none'
+    body.style.overscrollBehavior = 'none'
+    window.scrollTo(0, 0)
+    return () => {
+      html.style.overflow = prev.htmlOverflow
+      body.style.overflow = prev.bodyOverflow
+      html.style.overscrollBehavior = prev.htmlOverscroll
+      body.style.overscrollBehavior = prev.bodyOverscroll
+    }
+  }, [])
+
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
       if (event.data?.type === 'YOUSAY_ANIMATION_START') {
